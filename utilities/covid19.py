@@ -163,7 +163,7 @@ def draw_barchart(current_key,key_name,value_name,grp_key_name,df,top_count,titl
     for i, (value, name, grp_name) in enumerate(zip(dff[value_name], dff[grp_key_name],dff[key_name])):
         ax.text(value-dx, i,     name,           size=14, weight=600, ha='right', va='bottom')
         ax.text(value-dx, i-.25, grp_name, size=10, color='#444444', ha='right', va='baseline')
-        ax.text(value+dx, i,     ticker.StrMethodFormatter('{value:,.0f}'),  size=14, ha='left',  va='center')
+        ax.text(value+dx, i,     'value:%.0f' % (value) ,  size=14, ha='left',  va='center')
     ax.text(1, 0.4, current_key, transform=ax.transAxes, color='#777777', size=46, ha='right', weight=800)
     ax.text(0, 1.06, 'Confirmed Count', transform=ax.transAxes, size=12, color='#777777')
     ax.xaxis.set_major_formatter(ticker.StrMethodFormatter('{x:,.0f}'))
